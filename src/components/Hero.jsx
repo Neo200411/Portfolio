@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import AnimatedCounter from './AnimatedCounter';
 
 // Extracted scramble function so it can be reused
 export const useScramble = (ref) => {
@@ -108,11 +109,11 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.7 }}
         >
           <div className="hero-stat">
-            <div className="hero-stat-num">8<span>.94</span></div>
+            <div className="hero-stat-num"><AnimatedCounter end={8} suffix="" /><span><AnimatedCounter end={94} prefix="." duration={2500} /></span></div>
             <div className="hero-stat-label">CGPA / 10</div>
           </div>
           <div className="hero-stat">
-            <div className="hero-stat-num">3<span>+</span></div>
+            <div className="hero-stat-num"><AnimatedCounter end={3} /><span>+</span></div>
             <div className="hero-stat-label">Projects Built</div>
           </div>
           <div className="hero-stat">
