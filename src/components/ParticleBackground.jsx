@@ -79,9 +79,9 @@ const ParticleBackground = ({ theme }) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const isDark = theme === 'dark';
-      const dotColor = isDark ? 'rgba(200, 255, 0, 0.35)' : 'rgba(74, 124, 89, 0.3)';
-      const lineColor = isDark ? 'rgba(200, 255, 0,' : 'rgba(74, 124, 89,';
-      const mouseLineColor = isDark ? 'rgba(200, 255, 0,' : 'rgba(74, 124, 89,';
+      const dotColor = isDark ? 'rgba(200, 255, 0, 0.35)' : 'rgba(45, 106, 79, 0.3)';
+      const lineColor = isDark ? 'rgba(200, 255, 0,' : 'rgba(45, 106, 79,';
+      const mouseLineColor = isDark ? 'rgba(200, 255, 0,' : 'rgba(45, 106, 79,';
 
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
