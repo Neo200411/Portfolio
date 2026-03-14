@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Cursor = () => {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const [ringPos, setRingPos] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef(null);
+  const ringRef = useRef(null);
   const [isHovering, setIsHovering] = useState(false);
-  const [magneticPos, setMagneticPos] = useState(null);
+  
+  // Use refs to track position without triggering re-renders
+  const mousePos = useRef({ x: 0, y: 0 });
+  const ringPos = useRef({ x: 0, y: 0 });
+  const magneticPos = useRef(null);
 
   useEffect(() => {
     let animationFrameId;
-    let rx = 0;
-    let ry = 0;
-    let mx = 0;
-    let my = 0;
 
     const onMouseMove = (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-      setCursorPos({ x: mx, y: my });
+      mousePos.current = { x: e.clientX, y: e.clientY };
 
-      // Handle magnetic buttons globally based on class or data attribute if we wanted,
-      // but in React it's often better to handle magnetic state per-component, or globally 
-      // by listening to events on specific elements. For simplicity matching vanilla JS:
+      // Instantly update the inner dot cursor via direct DOM manipulation
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${mousePos.current.x}px`;
+        cursorRef.current.style.top = `${mousePos.current.y}px`;
+      }
+
       const target = e.target.closest('a, .btn, .project-item, .skill-block, .nav-logo');
       
       if (target) {
@@ -29,18 +30,17 @@ const Cursor = () => {
            const rect = target.getBoundingClientRect();
            const hx = rect.left + rect.width / 2;
            const hy = rect.top + rect.height / 2;
-           const dx = (mx - hx) * 0.3;
-           const dy = (my - hy) * 0.3;
+           const dx = (mousePos.current.x - hx) * 0.3;
+           const dy = (mousePos.current.y - hy) * 0.3;
            
            target.style.transform = `translate(${dx}px, ${dy}px)`;
-           setMagneticPos({ x: hx + dx * 0.5, y: hy + dy * 0.5 });
+           magneticPos.current = { x: hx + dx * 0.5, y: hy + dy * 0.5 };
         } else {
-           setMagneticPos(null);
+           magneticPos.current = null;
         }
       } else {
         setIsHovering(false);
-        setMagneticPos(null);
-        // Reset transforms
+        magneticPos.current = null;
         document.querySelectorAll('.btn, .nav-logo, .nav-links a').forEach(el => {
             el.style.transform = 'translate(0px, 0px)';
         });
@@ -48,14 +48,25 @@ const Cursor = () => {
     };
 
     const animateRing = () => {
-      if (magneticPos) {
-        rx += (magneticPos.x - rx) * 0.2;
-        ry += (magneticPos.y - ry) * 0.2;
+      let rx = ringPos.current.x;
+      let ry = ringPos.current.y;
+      
+      if (magneticPos.current) {
+        rx += (magneticPos.current.x - rx) * 0.2;
+        ry += (magneticPos.current.y - ry) * 0.2;
       } else {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
+        rx += (mousePos.current.x - rx) * 0.12;
+        ry += (mousePos.current.y - ry) * 0.12;
       }
-      setRingPos({ x: rx, y: ry });
+      
+      ringPos.current = { x: rx, y: ry };
+      
+      // Update DOM directly for the ring
+      if (ringRef.current) {
+        ringRef.current.style.left = `${rx}px`;
+        ringRef.current.style.top = `${ry}px`;
+      }
+      
       animationFrameId = requestAnimationFrame(animateRing);
     };
 
@@ -66,28 +77,26 @@ const Cursor = () => {
       document.removeEventListener('mousemove', onMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [magneticPos]);
+  }, []);
 
   return (
     <>
       <div 
+        ref={cursorRef}
         className="cursor" 
         style={{ 
-            left: `${cursorPos.x}px`, 
-            top: `${cursorPos.y}px`,
             transform: `translate(-50%, -50%) scale(${isHovering ? 0.5 : 1})`
         }} 
       />
       <div 
+        ref={ringRef}
         className="cursor-ring" 
         style={{ 
-            left: `${ringPos.x}px`, 
-            top: `${ringPos.y}px`,
             width: isHovering ? '60px' : '34px',
             height: isHovering ? '60px' : '34px',
             backgroundColor: isHovering ? 'rgba(200, 255, 0, 0.1)' : 'transparent',
             mixBlendMode: isHovering ? 'screen' : 'normal',
-            transform: 'translate(-50%, -50%)' // magnetic pull is handled by pos
+            transform: 'translate(-50%, -50%)'
         }} 
       />
     </>
