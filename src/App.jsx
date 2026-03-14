@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Cursor from './components/Cursor';
+import ParticleBackground from './components/ParticleBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Marquee from './components/Marquee';
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <>
+      <ParticleBackground theme={theme} />
       <Cursor theme={theme} />
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
