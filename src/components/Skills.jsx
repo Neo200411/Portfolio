@@ -1,9 +1,7 @@
-import React, { useRef } from 'react';
-import { useReveal } from './About'; // Reuse our reveal logic
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Skills = () => {
-  const revealRef = useRef(null);
-  useReveal([revealRef]);
 
   const skillsData = [
     { num: '01', title: 'Languages', tags: ['C++', 'C', 'Python', 'JavaScript'] },
@@ -14,13 +12,34 @@ const Skills = () => {
     { num: '06', title: 'Core CS & Tools', tags: ['DSA', 'DBMS', 'OS', 'Networks', 'Git', 'GitHub', 'VS Code'] }
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <section id="skills">
       <div className="section-label">Skills</div>
       <h2 className="section-title">Tech<br/>Stack<span>.</span></h2>
-      <div className="skills-grid reveal" ref={revealRef}>
+      <motion.div 
+        className="skills-grid"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {skillsData.map((skill, index) => (
-          <div key={index} className="skill-block">
+          <motion.div variants={item} key={index} className="skill-block">
             <div className="skill-block-num">{skill.num}</div>
             <div className="skill-block-title">{skill.title}</div>
             <div className="skill-tags">
@@ -28,9 +47,9 @@ const Skills = () => {
                 <span key={tIndex} className="tag">{tag}</span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

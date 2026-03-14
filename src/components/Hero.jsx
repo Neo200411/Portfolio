@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 // Extracted scramble function so it can be reused
 export const useScramble = (ref) => {
@@ -47,24 +48,44 @@ const Hero = () => {
       <div className="hero-bg-text">NEO</div>
       <div className="hero-grid">
         <div>
-          <div className="hero-tag" ref={tagRef}>
+          <motion.div 
+            className="hero-tag" ref={tagRef}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             Full-Stack Developer • ML Enthusiast • Learning Generative AI
-          </div>
+          </motion.div>
 
-          <h1 className="hero-name">
+          <motion.h1 
+            className="hero-name"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.25 }}
+          >
             <span className="outline">NEO</span><br/>
             <span>MISHRA</span>
-          </h1>
+          </motion.h1>
 
-          <p className="hero-desc">
+          <motion.p 
+            className="hero-desc"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.45 }}
+          >
             Computer Science student passionate about building scalable web applications,
             machine learning solutions, and exploring Generative AI technologies.
             Strong foundation in DSA, DBMS, and Operating Systems.
             Currently pursuing B.Tech in Data Science at
             <strong style={{ color: 'var(--text)' }}> Manipal University Jaipur</strong>.
-          </p>
+          </motion.p>
 
-          <div className="hero-cta">
+          <motion.div 
+            className="hero-cta"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.6 }}
+          >
             <a href="#projects" className="btn btn-primary">
               View Work →
             </a>
@@ -77,10 +98,15 @@ const Hero = () => {
             <a href="https://www.linkedin.com/in/neo-mishra-1372a0291/" target="_blank" rel="noreferrer" className="btn btn-ghost">
               LinkedIn →
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="hero-right">
+        <motion.div 
+          className="hero-right"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
           <div className="hero-stat">
             <div className="hero-stat-num">8<span>.94</span></div>
             <div className="hero-stat-label">CGPA / 10</div>
@@ -93,7 +119,7 @@ const Hero = () => {
             <div className="hero-stat-num">AI<span>+</span></div>
             <div className="hero-stat-label">Learning Gen-AI</div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

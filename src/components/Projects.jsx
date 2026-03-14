@@ -1,19 +1,20 @@
-import React, { useRef } from 'react';
-import { useReveal } from './About';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
-  const revealRef1 = useRef(null);
-  const revealRef2 = useRef(null);
-  const revealRef3 = useRef(null);
-  useReveal([revealRef1, revealRef2, revealRef3]);
-
   return (
     <section id="projects">
       <div className="section-label">Projects</div>
       <h2 className="section-title">Selected<br/>Work<span>.</span></h2>
       <div className="projects-list">
         
-        <div className="project-item reveal" ref={revealRef1}>
+        <motion.div 
+          className="project-item"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="project-num">01</div>
           <div>
             <div className="project-name">E-Commerce Sales Prediction<br/>& Customer Segmentation</div>
@@ -34,9 +35,15 @@ const Projects = () => {
             <div className="project-metric">R² Score: 0.75 — Evaluated with RMSE & MAE</div>
           </div>
           <div className="project-highlight">ML · Data</div>
-        </div>
+        </motion.div>
 
-        <div className="project-item reveal" ref={revealRef2}>
+        <motion.div 
+          className="project-item"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="project-num">02</div>
           <div>
             <div className="project-name">AI-Powered Resume Builder<br/>Web Application</div>
@@ -57,9 +64,15 @@ const Projects = () => {
             <div className="project-metric">MERN Stack · Full-Stack · AI Integration</div>
           </div>
           <div className="project-highlight">MERN · AI</div>
-        </div>
+        </motion.div>
 
-        <div className="project-item reveal" ref={revealRef3}>
+        <motion.div 
+          className="project-item"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="project-num">03</div>
           <div>
             <div className="project-name">Hostel-Based Peer-to-Peer<br/>Marketplace Platform</div>
@@ -78,7 +91,7 @@ const Projects = () => {
             <div className="project-metric">AI Image Recognition · P2P Commerce</div>
           </div>
           <div className="project-highlight">P2P · Commerce</div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

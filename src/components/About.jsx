@@ -1,35 +1,19 @@
-import React, { useEffect, useRef } from 'react';
-
-export const useReveal = (refs) => {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { 
-          e.target.classList.add('visible'); 
-          observer.unobserve(e.target); 
-        }
-      });
-    }, { threshold: 0.1 });
-
-    refs.forEach(ref => {
-      if (ref.current) observer.observe(ref.current);
-    });
-
-    return () => observer.disconnect();
-  }, [refs]);
-};
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const About = () => {
-  const revealRef1 = useRef(null);
-  const revealRef2 = useRef(null);
-  useReveal([revealRef1, revealRef2]);
-
   return (
     <section id="about">
       <div className="section-label">About</div>
       <h2 className="section-title">The<br/>Developer<span>.</span></h2>
       <div className="about-grid">
-        <div className="about-text reveal" ref={revealRef1}>
+        <motion.div 
+          className="about-text"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <p>
             I'm <strong>Neo Mishra</strong> — a full-stack developer and aspiring engineer with a passion 
             for building systems that scale. Currently pursuing a B.Tech in Data Science at Manipal 
@@ -47,9 +31,14 @@ const About = () => {
             Beyond coding, I've led national-level events as <strong>IIC Event Coordinator</strong> with 250+ 
             participants, and directed an editorial team — so I understand both building products and leading teams.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="reveal" ref={revealRef2}>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="about-details">
             <div className="detail-row">
               <span className="detail-key">Status</span>
@@ -79,7 +68,7 @@ const About = () => {
             <div className="award-item">IIC Event Coordinator — 250+ national participants</div>
             <div className="award-item">Director, Editorial Team</div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

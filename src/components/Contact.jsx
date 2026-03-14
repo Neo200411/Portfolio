@@ -1,15 +1,17 @@
-import React, { useRef } from 'react';
-import { useReveal } from './About';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
-  const revealRef = useRef(null);
-  useReveal([revealRef]);
-
   return (
     <section id="contact">
       <div className="section-label">Contact</div>
       <div className="contact-inner">
-        <div className="reveal" ref={revealRef}>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <h2 className="contact-big">Let's<br/>Build<br/><span>Together</span></h2>
           <p className="contact-sub">
             Open to internships, collaborations, and interesting problems.<br/>
@@ -45,7 +47,7 @@ const Contact = () => {
               <div className="contact-link-arrow">↗</div>
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
