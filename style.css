@@ -258,10 +258,12 @@
   .project-desc { font-size: 0.75rem; line-height: 1.8; color: var(--muted); max-width: 600px; margin-bottom: 1.5rem; }
   .project-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .stack-tag { font-size: 0.6rem; padding: 0.3rem 0.7rem; background: var(--bg); border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.05em; }
+  /* PROJECT HIGHLIGHT - modified for scramble effect */
   .project-highlight {
     font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
     writing-mode: vertical-rl; padding-top: 0.5rem; align-self: center;
     opacity: 0; transition: opacity 0.3s;
+    font-family: 'IBM Plex Mono', monospace; /* Best for scramble */
   }
   .project-item:hover .project-highlight { opacity: 1; }
   .project-metric { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; color: var(--accent); margin-top: 1rem; }
