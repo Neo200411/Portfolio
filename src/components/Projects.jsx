@@ -46,24 +46,24 @@ const Projects = () => {
         >
           <div className="project-num">02</div>
           <div>
-            <div className="project-name">AI-Powered Resume Builder<br/>Web Application</div>
+            <div className="project-name">InterviewPrep AI<br/>Mock Platform</div>
             <p className="project-desc">
-              Full-stack MERN application enabling users to create, edit, and manage professional resumes. 
-              Integrated AI/NLP-based content suggestions for summaries, skills, and project descriptions. 
-              Built secure RESTful APIs for authentication and designed a responsive React.js interface 
-              with real-time preview.
+              Built a sophisticated, AI-driven mock interview platform simulating technical assessments. 
+              Integrated Groq (LLaMA 3.3 70B) for context-aware resume analysis from uploaded PDFs, smart question generation, 
+              and dynamic follow-up questions. Features timed practice mode, non-revealing AI hints, and 
+              detailed evaluation scoring.
             </p>
             <div className="project-stack">
-              <span className="stack-tag">MongoDB</span>
-              <span className="stack-tag">Express.js</span>
               <span className="stack-tag">React.js</span>
               <span className="stack-tag">Node.js</span>
-              <span className="stack-tag">REST APIs</span>
-              <span className="stack-tag">AI/NLP</span>
+              <span className="stack-tag">Express.js</span>
+              <span className="stack-tag">MongoDB</span>
+              <span className="stack-tag">LangChain</span>
+              <span className="stack-tag">Groq (LLaMA 3)</span>
             </div>
-            <div className="project-metric">MERN Stack · Full-Stack · AI Integration</div>
+            <div className="project-metric">AI Resume Parsing · Groq LLaMA 3.3 · Mock Simulation</div>
           </div>
-          <div className="project-highlight">MERN · AI</div>
+          <div className="project-highlight">AI · Full-Stack</div>
         </motion.div>
 
         <motion.div 
@@ -75,22 +75,21 @@ const Projects = () => {
         >
           <div className="project-num">03</div>
           <div>
-            <div className="project-name">Hostel-Based Peer-to-Peer<br/>Marketplace Platform</div>
+            <div className="project-name">PrimeHR<br/>Enterprise HRMS Portal</div>
             <p className="project-desc">
-              A marketplace for hostel students to act as both buyers and sellers using a unified account. 
-              Designed RESTful APIs and MongoDB schemas for users, products, and orders. Implemented product 
-              listing, hostel-based filtering, order placement and tracking, plus AI-assisted image-based product listing.
+              Designed and built a modern Human Resource Management System featuring role-based dashboards for Employees, 
+              Managers, and Admins. Integrates secure Supabase authentication, structured quarterly performance check-ins, 
+              multi-stage approval workflows, and interactive live analytics.
             </p>
             <div className="project-stack">
-              <span className="stack-tag">JavaScript</span>
-              <span className="stack-tag">Node.js</span>
-              <span className="stack-tag">Express.js</span>
-              <span className="stack-tag">MongoDB</span>
-              <span className="stack-tag">React.js</span>
+              <span className="stack-tag">Next.js</span>
+              <span className="stack-tag">Tailwind CSS</span>
+              <span className="stack-tag">Supabase</span>
+              <span className="stack-tag">PostgreSQL</span>
             </div>
-            <div className="project-metric">AI Image Recognition · P2P Commerce</div>
+            <div className="project-metric">Supabase Auth & DB · Role-Based Dashboards · Performance Workflows</div>
           </div>
-          <div className="project-highlight">P2P · Commerce</div>
+          <div className="project-highlight">SaaS · HRMS</div>
         </motion.div>
 
       </div>
