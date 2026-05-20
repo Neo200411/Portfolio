@@ -90,7 +90,7 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary">
               View Work →
             </a>
-            <a href="/src/assets/Neo_Resume.pdf" target="_blank" rel="noreferrer" className="btn btn-ghost">
+            <a href="https://docs.google.com/document/d/YOUR_DOCUMENT_ID/edit?usp=sharing" target="_blank" rel="noreferrer" className="btn btn-ghost">
               Resume →
             </a>
             <a href="https://github.com/Neo200411" target="_blank" rel="noreferrer" className="btn btn-ghost">
