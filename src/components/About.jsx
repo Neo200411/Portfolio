@@ -15,21 +15,19 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <p>
-            I'm <strong>Neo Mishra</strong> — a full-stack developer and aspiring engineer with a passion 
-            for building systems that scale. Currently pursuing a B.Tech in Data Science at Manipal 
-            University Jaipur, I blend software engineering fundamentals with modern web and ML tooling.
+            I am a <strong>Data Science undergraduate</strong> at <strong>Manipal University Jaipur</strong> with 
+            a keen interest in Software Development, AI/ML, and Generative AI.
           </p>
           <p>
-            My work spans from building <strong>ML-powered prediction models</strong> for e-commerce, 
-            to architecting full-stack MERN applications with AI-driven features. I care deeply about 
-            clean code, good architecture, and shipping things that actually work.
+            I am experienced in building academic and personal projects using <strong>Python, JavaScript, React, Node.js</strong>, 
+            and machine learning libraries, built with the assistance of modern AI tools and APIs.
           </p>
           <div className="about-highlight">
-            "Interested in developing scalable systems and solving real-world problems through clean, efficient code."
+            "Looking for internship opportunities to gain hands-on industry experience and grow as a developer."
           </div>
           <p>
-            Beyond coding, I've led national-level events as <strong>IIC Event Coordinator</strong> with 250+ 
-            participants, and directed an editorial team — so I understand both building products and leading teams.
+            Currently learning backend development, full-stack application development, and GenAI 
+            concepts such as <strong>RAG pipelines, prompt engineering, and LLM integration</strong>.
           </p>
         </motion.div>
         

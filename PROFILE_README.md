@@ -5,7 +5,7 @@
   <a href="mailto:kneom1234@gmail.com"><img src="https://img.shields.io/badge/Email-kneom1234%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 </p>
 
-I'm a **Full-Stack Developer**, **Machine Learning Enthusiast**, and aspiring systems engineer currently pursuing my **B.Tech in Data Science** at **Manipal University Jaipur** (Batch of 2023 — 2027). I specialize in architecting scalable web applications and building predictive ML models.
+I'm a **Data Science undergraduate** at **Manipal University Jaipur** with a strong interest in Software Development, AI/ML, and Generative AI. I have experience building academic and personal projects using **Python, JavaScript, React, Node.js**, and machine learning libraries with the assistance of modern AI tools and APIs. Currently, I am focused on learning backend development, full-stack application development, and GenAI concepts such as **RAG pipelines, prompt engineering, and LLM integration** while looking for internship opportunities to gain hands-on industry experience and grow as a developer.
 
 ---
 
