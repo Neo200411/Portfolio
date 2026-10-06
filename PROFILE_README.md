@@ -69,10 +69,10 @@ I'm a **Data Science undergraduate** at **Manipal University Jaipur** with a str
 * **Stack:** `React.js`, `Node.js`, `Express.js`, `MongoDB`, `LangChain`, `Groq API (LLaMA 3)`
 * **Highlight:** Hardened with helmet security, rate-limiting, and features rich interactive Recharts dashboard & progress tracking.
 
-### 03. PrimeHR — Enterprise HRMS Portal
-* **Description:** A modern Human Resource Management System (HRMS) featuring role-based dashboards for Employees, Managers, and Admins. Supports goal management, multi-stage approvals, quarterly check-ins, and performance tracking.
-* **Stack:** `Next.js`, `React`, `Tailwind CSS`, `Supabase (Auth & PostgreSQL)`
-* **Highlight:** Advanced workflow management allowing manager target overrides, comments, live activity analytics, and CSV report exporting.
+### 03. DocFlow AI — Multi-Tenant Document Intelligence Platform
+* **Description:** A multi-tenant document workflow platform with layered RBAC/ABAC access control (tenant, project, team, role, and sensitivity levels), stage-based review & approval pipelines, document versioning, and audit trails.
+* **Stack:** `Python`, `FastAPI`, `PostgreSQL`, `SQLAlchemy`, `Alembic`, `Qdrant`, `Docling`, `Groq (LLaMA)`, `React`
+* **Highlight:** Grounded RAG Q&A over project documents using Docling parsing, Qdrant vector search with reranking, and AI agents for drafting and review.
 
 ---
 

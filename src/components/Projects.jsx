@@ -75,21 +75,26 @@ const Projects = () => {
         >
           <div className="project-num">03</div>
           <div>
-            <div className="project-name">PrimeHR<br/>Enterprise HRMS Portal</div>
+            <div className="project-name">DocFlow AI<br/>Multi-Tenant Document Intelligence</div>
             <p className="project-desc">
-              Designed and built a modern Human Resource Management System featuring role-based dashboards for Employees, 
-              Managers, and Admins. Integrates secure Supabase authentication, structured quarterly performance check-ins, 
-              multi-stage approval workflows, and interactive live analytics.
+              Built a multi-tenant document workflow platform with layered RBAC/ABAC access control spanning tenant, 
+              project, team, role, and sensitivity levels. Features stage-based review & approval pipelines, document 
+              versioning, and audit trails. Powers grounded RAG Q&A over project documents using Docling parsing, 
+              Qdrant vector search with reranking, and Groq LLaMA agents for drafting and review.
             </p>
             <div className="project-stack">
-              <span className="stack-tag">Next.js</span>
-              <span className="stack-tag">Tailwind CSS</span>
-              <span className="stack-tag">Supabase</span>
+              <span className="stack-tag">Python</span>
+              <span className="stack-tag">FastAPI</span>
               <span className="stack-tag">PostgreSQL</span>
+              <span className="stack-tag">SQLAlchemy</span>
+              <span className="stack-tag">Qdrant</span>
+              <span className="stack-tag">Docling</span>
+              <span className="stack-tag">Groq (LLaMA)</span>
+              <span className="stack-tag">React</span>
             </div>
-            <div className="project-metric">Supabase Auth & DB · Role-Based Dashboards · Performance Workflows</div>
+            <div className="project-metric">RAG · RBAC/ABAC · Approval Workflows · Multi-Tenant</div>
           </div>
-          <div className="project-highlight">SaaS · HRMS</div>
+          <div className="project-highlight">AI · Enterprise</div>
         </motion.div>
 
       </div>
